@@ -1,20 +1,40 @@
-// exercice 2.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
-//
-
+// reading a text file
 #include <iostream>
+#include <fstream>
+#include <string>
+#include<cmath>
+#include <iomanip> 
 
-int main()
+using namespace std;
+
+
+
+double calcule(double precision)
 {
-    std::cout << "Hello World!\n";
+	double premierTerme = 1;
+	double prochainTerme ;
+	double reponse = premierTerme;
+	prochainTerme = sqrt(2 + premierTerme);
+	
+	
+	while (prochainTerme - reponse > precision)
+	{
+		prochainTerme = sqrt(2 + premierTerme);
+		reponse = premierTerme;
+		premierTerme = prochainTerme;
+	}
+	
+	return reponse;
 }
 
-// Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
-// Déboguer le programme : F5 ou menu Déboguer > Démarrer le débogage
+int main() 
+{  
+	int nombreApresVirgule = 3;
+	double precision = pow(10, -nombreApresVirgule);
+	
+	double reponse = calcule(precision);
 
-// Astuces pour bien démarrer : 
-//   1. Utilisez la fenêtre Explorateur de solutions pour ajouter des fichiers et les gérer.
-//   2. Utilisez la fenêtre Team Explorer pour vous connecter au contrôle de code source.
-//   3. Utilisez la fenêtre Sortie pour voir la sortie de la génération et d'autres messages.
-//   4. Utilisez la fenêtre Liste d'erreurs pour voir les erreurs.
-//   5. Accédez à Projet > Ajouter un nouvel élément pour créer des fichiers de code, ou à Projet > Ajouter un élément existant pour ajouter des fichiers de code existants au projet.
-//   6. Pour rouvrir ce projet plus tard, accédez à Fichier > Ouvrir > Projet et sélectionnez le fichier .sln.
+	cout << "la limite de cette suite recurrente avec une precision de " << nombreApresVirgule << 
+		" chiffres apres la virgule est " <<fixed <<reponse;
+
+}
