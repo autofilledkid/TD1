@@ -9,7 +9,7 @@ using namespace std;
 
 
 
-double calcule(double precision)
+double calculerLimite(double precision)
 {
 	double premierTerme = 1;
 	double prochainTerme ;
@@ -29,10 +29,10 @@ double calcule(double precision)
 
 int main() 
 {  
-	int nombreApresVirgule = 3;
+	int nombreApresVirgule = 5;
 	double precision = pow(10, -nombreApresVirgule);
 	
-	double reponse = calcule(precision);
+	double reponse = calculerLimite(precision);
 
 	cout << "la limite de cette suite recurrente avec une precision de " << nombreApresVirgule << 
 		" chiffres apres la virgule est " <<fixed <<reponse;

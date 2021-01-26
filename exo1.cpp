@@ -45,10 +45,13 @@ void trouverMots(string phrase)
 
     }
 
+    double moyenne;
+    moyenne = compteurLettre / compteurmots;
     cout << "le mot le plus court est : "<<motCourt<<"\n";
     cout << "le mot le plus Long est : " << motLong << "\n";
     cout << "La longueur moyenne est : " << compteurLettre / compteurmots << " lettres\n";
     
+   
 }
 
 
